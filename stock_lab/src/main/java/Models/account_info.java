@@ -25,10 +25,20 @@ public class account_info {
         Trades = trades;
     }
 
-    double CalculateEndingBalance(){
+    public double CalculateEndingBalance(){
         double result = BeginningBalance;
 
         // Calculation Logic Here!!
+
+        for (stock_trade trade : Trades) {
+            if(trade.Type.equalsIgnoreCase("Buy")){
+                result -= trade.CountShares * trade.PricePerShare;
+            }else if(trade.Type.equalsIgnoreCase("sell")){
+                result += trade.CountShares * trade.PricePerShare;
+            }else{
+                throw new IllegalArgumentException();
+            }
+        }
 
         return result;
     }
