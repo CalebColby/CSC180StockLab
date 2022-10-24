@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import com.xkcoding.json.support.JsonAdapter;
+
 /**
  * Hello world!
  */
@@ -19,7 +21,9 @@ public final class App {
     public static void main(String[] args) throws FileNotFoundException {
         String jsonData = GetJsonDataAsString("C:\\Users\\Ccolby\\OneDrive - Neumont College of Computer Science\\Desktop\\stock_transations-3.by.account.holder.json");
         
+        
 
+        System.out.print(jsonData);
     }
 
     private static String GetJsonDataAsString(String filePath) throws FileNotFoundException{
